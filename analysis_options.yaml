@@ -1,0 +1,113 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  exclude:
+    - build/**
+    - lib/generated_plugin_registrant.dart
+  errors:
+    avoid_unnecessary_containers: error
+    await_only_futures: error
+    constant_identifier_names: error
+    empty_constructor_bodies: error
+    exhaustive_cases: error
+    file_names: error
+    library_prefixes: error
+    missing_required_param: error
+    non_constant_identifier_names: error
+    prefer_if_null_operators: error
+    prefer_is_not_empty: error
+    prefer_null_aware_operators: error
+    unnecessary_const: warning
+    unnecessary_new: error
+    unnecessary_this: error
+    unused_field: warning
+  plugins:
+    - dart_code_metrics
+
+linter:
+  rules:
+    avoid_function_literals_in_foreach_calls: true
+    avoid_unnecessary_containers: true
+    await_only_futures: true
+    camel_case_types: true
+    cancel_subscriptions: true
+    constant_identifier_names: true
+    empty_constructor_bodies: true
+    exhaustive_cases: true
+    file_names: true
+    library_prefixes: true
+    non_constant_identifier_names: true
+    prefer_const_constructors: true
+    prefer_final_fields: true
+    prefer_if_null_operators: true
+    prefer_is_not_empty: true
+    prefer_null_aware_operators: true
+    prefer_relative_imports: true
+    prefer_single_quotes: true
+    sized_box_for_whitespace: true
+    unnecessary_const: true
+    unnecessary_new: true
+    unnecessary_this: true
+    use_key_in_widget_constructors: true
+
+    omit_local_variable_types: false
+    unawaited_futures: false
+
+dart_code_metrics:
+  metrics:
+    # Function
+    cyclomatic-complexity: 20
+    maximum-nesting-level: 5
+    number-of-parameters: 8
+    source-lines-of-code: 50
+    # Class
+    weight-of-class: 0.33
+    # Tech debt
+    technical-debt:
+      threshold: 1
+      todo-cost: 24
+      ignore-cost: 8
+      ignore-for-file-cost: 24
+      as-dynamic-cost: 16
+      deprecated-annotations-cost: 24
+      file-nullsafety-migration-cost: 16
+      unit-type: "aproximate hours"
+  metrics-exclude:
+    - lib/**/**.config.dart
+    - lib/**/**_module.dart
+    - lib/pages/test_pages/**.dart
+    - test/**
+  rules:
+    # Dart
+    - avoid-nested-conditional-expressions:
+        severity: warning
+        acceptable-level: 2
+    - avoid-missing-enum-constant-in-map:
+        severity: warning
+    - avoid-unnecessary-type-assertions:
+        severity: warning
+    - avoid-unnecessary-type-casts:
+        severity: warning
+    - avoid-unrelated-type-assertions:
+        severity: warning
+    - avoid-unused-parameters:
+        severity: error
+    - binary-expression-operand-order:
+        severity: warning
+    - no-boolean-literal-compare:
+        severity: warning
+    - no-equal-then-else:
+        severity: warning
+    - no-object-declaration:
+        severity: warning
+    - prefer-first:
+        severity: warning
+    - prefer-last:
+        severity: warning
+
+    # Flutter
+    - always-remove-listener:
+        severity: warning
+    - avoid-unnecessary-setstate:
+        severity: warning
+  rules-exclude:
+    - test/**
