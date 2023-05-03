@@ -1,24 +1,19 @@
 import 'package:extended_sliver/extended_sliver.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/tab_builder.dart';
+import '../../utils/tabs_builder.dart';
 import 'home_page_tab_type.dart';
 import 'views/home_page_header.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      ///TabBuilder is a simple wrapper for tabs, see my other 
+      ///TabBuilder is a simple wrapper for tabs, see my other
       ///project for detailed explanation why it is very useful
       body: TabsBuilder(
         tabs: HomePageTabType.values,
