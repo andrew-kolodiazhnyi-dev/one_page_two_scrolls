@@ -18,6 +18,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      ///TabBuilder is a simple wrapper for tabs, see my other 
+      ///project for detailed explanation why it is very useful
       body: TabsBuilder(
         tabs: HomePageTabType.values,
         tabBuilder: (item) => item.getTabTile(),
