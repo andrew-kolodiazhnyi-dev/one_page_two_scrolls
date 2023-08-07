@@ -13,12 +13,11 @@ class HomePageHeader extends SliverPersistentHeaderDelegate {
     required this.backgroungImagePath,
   });
 
-  MediaQueryData get mediaQueryData =>
-      MediaQueryData.fromWindow(WidgetsBinding.instance.window);
+  @protected
+  static MediaQueryData get mediaQueryData => MediaQueryData.fromView(
+      WidgetsBinding.instance.platformDispatcher.views.first);
 
-  final double _initialAvatarSize =
-      MediaQueryData.fromWindow(WidgetsBinding.instance.window).size.height *
-          0.15;
+  final double _initialAvatarSize = mediaQueryData.size.height * 0.15;
   final double _endAvatarSize = kToolbarHeight * 0.8;
   final double _padding4 = 4;
   final double _padding8 = 8;
